@@ -41,3 +41,7 @@ Set these GitHub secrets:
    kubectl get pods
    kubectl get services
 3. Update ingress service with (loadbalancer_external_ip).xip.io for Expose the Services Publicly
+
+### Exposed App Publicly
+http://35.224.46.25.nip.io/ -> Nodejs app
+34.71.77.190.nip.io -> go app
