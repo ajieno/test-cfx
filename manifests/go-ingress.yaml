@@ -1,18 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: node-app-ingress
+  name: go-app-ingress
   annotations:
     kubernetes.io/ingress.class: "gce"
 spec:
   rules:
-    - host: 35.224.46.25.nip.io
+    - host: your_external_loadbalancerip.nip.io
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: node-app
+                name: go-app
                 port:
                   number: 80
