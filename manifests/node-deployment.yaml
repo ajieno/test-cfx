@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-app
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+        - name: node-app
+          image: us-central1-docker.pkg.dev/astute-fort-462914-g6/cicdtest/node-app
+          ports:
+            - containerPort: 4000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-app
+spec:
+  type: LoadBalancer
+  selector:
+    app: node-app
+  ports:
+    - port: 80
+      targetPort: 4000
