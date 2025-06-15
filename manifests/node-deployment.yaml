@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: us-central1-docker.pkg.dev/astute-fort-462914-g6/cicdtest/node-app
+          image: us-central1-docker.pkg.dev/astute-fort-462914-g6/test-cfx/node-app
           ports:
             - containerPort: 4000
 ---

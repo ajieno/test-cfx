@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: go-app
-          image: us-central1-docker.pkg.dev/astute-fort-462914-g6/cicdtest/go-app
+          image: us-central1-docker.pkg.dev/astute-fort-462914-g6/test-cfx/go-app
           ports:
             - containerPort: 8080
 ---

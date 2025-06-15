@@ -29,7 +29,7 @@ jobs:
       - name: Build & Push Go image
         run: |
           COMMIT_SHA=${{ github.sha }}
-          IMAGE_URI=${{ secrets.ARTIFACT_REGISTRY_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/cicdtest/go-app
+          IMAGE_URI=${{ secrets.ARTIFACT_REGISTRY_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/test-cfx/go-app
 
           docker build -t $IMAGE_URI:latest -t $IMAGE_URI:$COMMIT_SHA ./go-app
           docker push $IMAGE_URI:latest
@@ -38,7 +38,7 @@ jobs:
       - name: Build & Push Node image
         run: |
           COMMIT_SHA=${{ github.sha }}
-          IMAGE_URI=${{ secrets.ARTIFACT_REGISTRY_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/cicdtest/node-app
+          IMAGE_URI=${{ secrets.ARTIFACT_REGISTRY_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/test-cfx/node-app
 
           docker build -t $IMAGE_URI:latest -t $IMAGE_URI:$COMMIT_SHA ./node-app
           docker push $IMAGE_URI:latest
